@@ -157,10 +157,10 @@ namespace ServiceLayer.Code
             LoginResponse loginResponse = default;
             DataSet ds = await db.GetDataSetAsync(ProcedureName, new
             {
-                UserId = authUser.UserId,
+                authUser.UserId,
                 MobileNo = authUser.Mobile,
-                EmailId = authUser.EmailId,
-                UserTypeId = authUser.UserTypeId,
+                authUser.EmailId,
+                authUser.UserTypeId,
                 PageSize = 1000
             });
 
@@ -203,7 +203,7 @@ namespace ServiceLayer.Code
                             LastName = loginDetail.LastName,
                             Address = loginDetail.Address,
                             Mobile = loginDetail.Mobile,
-                            Email = loginDetail.Email,
+                            EmailId = loginDetail.EmailId,
                             EmailId = loginDetail.EmailId,
                             UserId = loginDetail.UserId,
                             CompanyName = currentCompany.CompanyName,
